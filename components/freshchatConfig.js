@@ -1,11 +1,13 @@
 class FreshchatConfig {
 
-    constructor(appId, appKey) {
+    constructor(appId, appKey, hostUrl, token) {
 
         // TODO: expose stringsBundle to be used in iOS wrapper - muthu
 
         this.appId = appId;  //TODO: Can we have non nullable ?
         this.appKey = appKey;  //TODO: Can we have non nullable ?
+        this.hostUrl = hostUrl;  //TODO: Can we have non nullable ?
+        this.token = token;  //TODO: Can we have non nullable ?
 
         this.domain = null;
         this.themeName = null;

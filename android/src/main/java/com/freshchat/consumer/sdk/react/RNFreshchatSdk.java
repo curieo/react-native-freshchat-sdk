@@ -129,13 +129,20 @@ public class RNFreshchatSdk extends ReactContextBaseJavaModule {
                 return;
             }
 
-            if (!initArgs.hasKey("appId") || !initArgs.hasKey("appKey")) {
-                Log.e(LOG_TAG, "appId and appKey are mandatory parameters");
+            if (!initArgs.hasKey("appId") || !initArgs.hasKey("appKey") || !initArgs.hasKey("hostUrl") || !initArgs.hasKey("token")) {
+                Log.e(LOG_TAG, "appId, appKey, hostUrl and token are mandatory parameters");
                 return;
             }
 
             String appId = initArgs.getString("appId");
             String appKey = initArgs.getString("appKey");
+            String hostUrl = initArgs.getString("hostUrl");
+            String token = initArgs.getString("token");
+
+            FreshchatConfig freshchatConfig = new FreshchatConfig(appId, appKey);
+            freshchatConfig.setHybridExperienceEnabled(true);
+            freshchatConfig.setWebWidgetHost(hostUrl); // host url in web messenger
+            freshchatConfig.setWebWidgetToken(token); // token in web messenger
 
             FreshchatConfig freshchatConfig = new FreshchatConfig(appId, appKey);
 
