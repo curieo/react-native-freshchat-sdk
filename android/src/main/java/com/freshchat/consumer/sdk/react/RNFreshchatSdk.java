@@ -144,8 +144,6 @@ public class RNFreshchatSdk extends ReactContextBaseJavaModule {
             freshchatConfig.setWebWidgetHost(hostUrl); // host url in web messenger
             freshchatConfig.setWebWidgetToken(token); // token in web messenger
 
-            FreshchatConfig freshchatConfig = new FreshchatConfig(appId, appKey);
-
             if (initArgs.hasKey("domain")) {
                 freshchatConfig.setDomain(initArgs.getString("domain"));
             }
